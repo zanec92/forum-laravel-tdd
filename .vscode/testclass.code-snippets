@@ -1,0 +1,26 @@
+{
+	"testclass …": {
+		"prefix": "testclass",
+		"body": [
+			"<?php",
+			"",
+			"namespace Tests\\Feature;",
+			"",
+			"use Tests\\TestCase;",
+			"use Illuminate\\Foundation\\Testing\\DatabaseMigrations;",
+			"",
+			"class $TM_FILENAME_BASE extends TestCase",
+			"{",
+			"\tuse DatabaseMigrations;",
+			"",
+			"\t/** @test */",
+			"\tpublic function it_()",
+			"\t{",
+			"\t\t$0",
+			"\t}",
+			"}",
+			""
+		],
+		"description": "Default test class"
+	}
+}
