@@ -1,0 +1,13 @@
+{
+	"test …": {
+		"prefix": "test",
+		"body": [
+			"/** @test */",
+			"function $0()",
+			"{",
+			"\t",
+			"}",
+		],
+		"description": "Create test class method"
+	}
+}
