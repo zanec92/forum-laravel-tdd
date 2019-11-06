@@ -12,6 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+        factory('App\User')->create([
+            'email' => 'john@doe.com'
+        ]);
+
         $threads = factory('App\Thread', 50)->create();
 
         $threads->each(function($thread) {
