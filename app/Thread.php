@@ -14,6 +14,17 @@ class Thread extends Model
     protected $guarded = [];
 
     /**
+     * Boot the model.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('replyCount', function ($builder) {
+            $builder->withCount('replies');
+        });
+    }
+
+    /**
      * Get a string path for the thread.
      * 
      * @return string
@@ -21,16 +32,6 @@ class Thread extends Model
     public function path()
     {
         return "/threads/{$this->channel->slug}/{$this->id}";
-    }
-
-    /**
-     * A thread may have many replies.
-     * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function replies()
-    {
-        return $this->hasMany(Reply::class);
     }
 
     /**
@@ -46,6 +47,16 @@ class Thread extends Model
     public function channel()
     {
         return $this->belongsTo(Channel::class);
+    }
+
+    /**
+     * A thread may have many replies.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
     }
 
     /**
