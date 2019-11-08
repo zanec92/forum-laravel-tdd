@@ -14,9 +14,9 @@
 			"\tuse DatabaseMigrations;",
 			"",
 			"\t/** @test */",
-			"\tpublic function it_()",
+			"\tpublic function $0()",
 			"\t{",
-			"\t\t$0",
+			"\t\t",
 			"\t}",
 			"}",
 			""
