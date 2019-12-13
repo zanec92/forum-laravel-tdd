@@ -16,6 +16,10 @@ trait RecordsActivity
                 $model->recordActivity($event);
             });
         }
+
+        static::deleting(function ($thread) {
+            $thread->activity()->delete();
+        });
     }
 
     /**
